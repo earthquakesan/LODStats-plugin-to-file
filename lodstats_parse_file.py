@@ -15,7 +15,6 @@ parser.add_option("-l", action="store_true", dest="load",
 print options
 
 import os
-import uuid
 import pickle
 from lodstats import RDFStats
 from lodstats.stats import lodstats as lodstats_set
@@ -96,7 +95,7 @@ class LODStats_RDFFile(object):
         self.stat_result = stat_result
         return stat_result
 
-rdffile = RDFFile(options.filename, options.format)
+rdffile = LODStats_RDFFile(options.filename, options.format)
 if(options.save):
     rdffile.runLODStats()
     rdffile.get_stat_result()
