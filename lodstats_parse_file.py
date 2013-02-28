@@ -20,7 +20,7 @@ import pickle
 from lodstats import RDFStats
 from lodstats.stats import lodstats as lodstats_set
 
-class RDFFile(object):
+class LODStats_RDFFile(object):
 
     def __init__(self, filename, file_format):
         cwd = os.path.abspath(os.getcwd())
