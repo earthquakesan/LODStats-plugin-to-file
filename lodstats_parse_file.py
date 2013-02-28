@@ -45,18 +45,18 @@ class LODStats_RDFFile(object):
         return rdfstats
 
     def callback_parse(self, rdfstats):
-        stat_result = None
-        stat_result.content_length = rdfstats.content_length
-        stat_result.bytes_download = rdfstats.bytes_download
-        stat_result.bytes = rdfstats.bytes
+        stat_result = {}
+        stat_result['content_length'] = rdfstats.content_length
+        stat_result['bytes_download'] = rdfstats.bytes_download
+        stat_result['bytes'] = rdfstats.bytes
         print stat_result
 
     def callback_stats(self, rdfstats):
         if(rdfstats.no_of_statements > 0):
             if(rdfstats.no_of_statements % 10000 == 0):
-                stat_result = None
-                stat_result.triples_done = rdfstats.no_of_statements
-                stat_result.warnings = rdfstats.warnings
+                stat_result = {}
+                stat_result['triples_done'] = rdfstats.no_of_statements
+                stat_result['warnings'] = rdfstats.warnings
                 print stat_result
 
     def save_to_disk(self, stat_result=None, id=None):
